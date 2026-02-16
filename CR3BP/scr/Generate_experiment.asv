@@ -1,0 +1,38 @@
+function  out=Generate_experiment(dx,dy,x_range,y_range, mu,save_path)
+
+        % INPUT:
+        %       dx - number of points in x.
+        %       dy - number of points in y.
+        %       x_range - X interval in grid.
+        %       y_range - Y interval in grid.
+        %       mu - mass parameter.
+        %       C  - Jacobi constant. 
+        %       theta - vector with values of theta to simulate.
+        %       save_path - path to save the folder.
+
+        
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    x_span = x_range(2) - x_range(1);
+    y_span = y_range(2) - y_range(1);
+    base_params = struct('dx',dx,'dy',dy,'mu',mu,'x_span',x_span, 'y_span', y_span);
+    base_name=sprintf("Exp_xr%d_yr%d_dx%d_dy%d_mu%d",x_span,y_range,dx,dy,mu)
+    base_path=fullfile(save_path,base_name)
+    
+    %Creamos la carpeta
+    if ~exist(base_path,"dir");
+        mkdir(base_path);
+        save(fullfile(base_path,'params.mat'),'base_params');
+    end 
+    
+    base_path_im=fullfile(base_path,"images");
+    if ~exist(base_path_im,"dir")
+        mkdir(base_path_im);
+    end 
+    
+    base_path_data=fullfile(base_path,"Data");
+    if ~exist(base_path_data,"dir")
+        mkdir(base_path_data);
+    end 
+
+end

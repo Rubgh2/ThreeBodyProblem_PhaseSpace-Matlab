@@ -1,0 +1,42 @@
+function [X, Y] = Generate_grid(x_range, y_range, dx, dy, save_path)
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %GENERATE_GRID: Create a 2D grid and optionally save to CSV
+    %
+    % Inputs:
+    %   
+    %   x_range   - [x_min, x_max].
+    %   y_range   - [y_min, y_max].
+    %   dx        - number of points in x.
+    %   dy        - number of points in y.
+    %   save_path - folder to save the CSV files.
+    %
+    % Outputs:
+    %   
+    %   X, Y      - meshgrid matrices.
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+
+    % Create filenames
+    file_X = fullfile(save_path, sprintf('Mesh_X_x%d_y%d.csv', dx, dy));
+    file_Y = fullfile(save_path, sprintf('Mesh_Y_x%d_y%d.csv', dx, dy));
+
+    % Check if files already exist
+    if isfile(file_X) && isfile(file_Y)
+        fprintf('Loading existing grid from CSV...\n');
+        X = readmatrix(file_X);
+        Y = readmatrix(file_Y);
+    else
+        fprintf('Generating new grid...\n');
+        cond_inix = linspace(x_range(1), x_range(2), dx);
+        cond_iniy = linspace(y_range(1), y_range(2), dy);
+        [X, Y] = meshgrid(cond_inix, cond_iniy);
+
+        % Create folder if it does not exist
+        if ~exist(save_path, 'dir')
+            mkdir(save_path);
+        end
+
+        writematrix(X, file_X);
+        writematrix(Y, file_Y);
+    end
+end
