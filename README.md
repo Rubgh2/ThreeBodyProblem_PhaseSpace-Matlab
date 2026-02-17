@@ -88,7 +88,7 @@ The Lagrangian Descriptors' ability to directly visualise invariant structures, 
    - All saved automatically in `results/Exp_.../Images/`.
 **Notes:**
     - Using default configuration, the code runs in 9 minutes in Intel(R) Core(TM) i5-10210U CPU @ 1.60 GHz (4 cores).
-    - In folder [/results] (CR3BP/results/Exp_xsp3_ysp3_dx400_dy400_mu1.215454e-02/Images) you can find the output for a longer run (Resolution 400x400, `energy_idx=[4,8]`, `thetas=[0,pi/2, pi, 3*\pi/2]`, `N=2` `mu=1.215454e-02` and all saving options 'true' except `plt_trajectories` and `save_trajectory`.)
+    - In folder [results] (CR3BP/results/Exp_xsp3_ysp3_dx400_dy400_mu1.215454e-02/Images) you can find the output for a longer run (Resolution 400x400, `energy_idx=[4,8]`, `thetas=[0,pi/2, pi, 3*\pi/2]`, `N=2` `mu=1.215454e-02` and all saving options 'true' except `plt_trajectories` and `save_trajectory`.)
 
 Here are some example outputs the code can produce (`Resolution 600x600`,`mu=1.215454e-02`):
 
