@@ -2,6 +2,11 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
+## Authors
+
+* **Carlos Gómez Redondo** - [GitHub](https://github.com/CarlosGomezRedondo24)
+* **Rubén Gutiérrez Hernández** - [GitHub](https://github.com/Rubgh2)
+
 A MATLAB implementation to reconstruct the phase space of the Circular Restricted Three Body Problem (CR3BP), focusing on invariant structures via Lagrangian Descriptors. This repository supports an ongoing paper exploring geometric and numerical insights.
 
 ## Introduction
